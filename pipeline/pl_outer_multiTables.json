@@ -1,0 +1,111 @@
+{
+	"name": "pl_outer_multiTables",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach2",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.TableList",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy data1",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "AzureSqlSource",
+									"queryTimeout": "02:00:00",
+									"partitionOption": "None"
+								},
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "ds_copy_multi_source_sql_tables",
+									"type": "DatasetReference",
+									"parameters": {
+										"TABLE_SCHEMA": {
+											"value": "@item().tableSchemaName",
+											"type": "Expression"
+										},
+										"TABLE_NAME": {
+											"value": "@item().tableName",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "ds_target_multi_sql_foreach",
+									"type": "DatasetReference",
+									"parameters": {
+										"TableName": {
+											"value": "@item().tableName",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"TableList": {
+				"type": "array",
+				"defaultValue": [
+					{
+						"tableName": "iplteams_2",
+						"tableSchemaName": "dbo"
+					},
+					{
+						"tableName": "employees_2",
+						"tableSchemaName": "dbo"
+					},
+					{
+						"tableName": "salesitems_2",
+						"tableSchemaName": "dbo"
+					}
+				]
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-05-02T15:39:00Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

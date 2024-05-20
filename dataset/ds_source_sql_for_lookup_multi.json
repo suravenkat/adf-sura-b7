@@ -1,0 +1,13 @@
+{
+	"name": "ds_source_sql_for_lookup_multi",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sql_source",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,32 @@
+{
+	"name": "sales_trigger_schedule",
+	"properties": {
+		"description": "sales_trigger_schedule",
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_copy_file",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "pl_setVariable_multiValues",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 1,
+				"startTime": "2024-05-15T21:12:00",
+				"endTime": "2024-05-16T21:55:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}

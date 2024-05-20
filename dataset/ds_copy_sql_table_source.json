@@ -1,0 +1,17 @@
+{
+	"name": "ds_copy_sql_table_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sql_source",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "employees"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

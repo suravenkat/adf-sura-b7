@@ -1,0 +1,13 @@
+{
+	"name": "ls_source_adls",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "ls_source_adls for copying data",
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://suraadlsb7.dfs.core.windows.net/",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEVCNTk0Qzk5LUQxODMtNDczMS1BRTFDLTZGMTk0NzM5QThBM181YjE0NjM0NS1lNzVlLTQzMjAtYTQ1Ny0zNTVhZTdiMzAxZDIiDQp9"
+		}
+	}
+}

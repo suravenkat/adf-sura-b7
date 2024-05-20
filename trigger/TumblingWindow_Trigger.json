@@ -1,0 +1,30 @@
+{
+	"name": "TumblingWindow_Trigger",
+	"properties": {
+		"description": "pl_TumblingWindow_Trigger",
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipeline": {
+			"pipelineReference": {
+				"referenceName": "pl_tumbling_Window_Trigger",
+				"type": "PipelineReference"
+			},
+			"parameters": {
+				"startdate": "@trigger().outputs.windowStartTime",
+				"enddate": "@trigger().outputs.windowEndTime"
+			}
+		},
+		"type": "TumblingWindowTrigger",
+		"typeProperties": {
+			"frequency": "Hour",
+			"interval": 24,
+			"startTime": "2024-04-30T23:50:00Z",
+			"delay": "00:00:00",
+			"maxConcurrency": 50,
+			"retryPolicy": {
+				"intervalInSeconds": 30
+			},
+			"dependsOn": []
+		}
+	}
+}

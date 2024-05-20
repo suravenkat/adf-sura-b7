@@ -1,0 +1,21 @@
+{
+	"name": "adf-sura-b7-dev",
+	"properties": {
+		"globalParameters": {
+			"conatiner": {
+				"type": "string",
+				"value": "sourcecontainer"
+			},
+			"filepath": {
+				"type": "string",
+				"value": "target"
+			}
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "28f32e9c-bb75-437a-a37e-bbe92db85789",
+		"tenantId": "100a7e00-c249-4c60-b1c3-70200fb7e3dc"
+	}
+}
