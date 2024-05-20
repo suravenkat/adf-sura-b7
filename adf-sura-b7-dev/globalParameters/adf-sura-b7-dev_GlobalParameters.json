@@ -1,0 +1,10 @@
+{
+	"conatiner": {
+		"type": "string",
+		"value": "sourcecontainer"
+	},
+	"filepath": {
+		"type": "string",
+		"value": "target"
+	}
+}

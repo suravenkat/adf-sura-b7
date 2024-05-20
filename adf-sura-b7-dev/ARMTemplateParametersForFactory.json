@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-sura-b7-dev"
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"ls_source_adls_accountKey": {
+			"value": ""
+		},
+		"ls_sql_source_connectionString": {
+			"value": ""
+		},
+		"ls_target_sqldb_connectionString": {
+			"value": ""
+		},
+		"ls_source_adls_properties_typeProperties_url": {
+			"value": "https://suraadlsb7.dfs.core.windows.net/"
+		},
+		"TumblingWindow_Trigger_properties_pipeline_parameters_startdate": {
+			"value": "@trigger().outputs.windowStartTime"
+		},
+		"TumblingWindow_Trigger_properties_pipeline_parameters_enddate": {
+			"value": "@trigger().outputs.windowEndTime"
+		}
+	}
+}
