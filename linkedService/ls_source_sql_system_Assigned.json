@@ -1,0 +1,10 @@
+{
+	"name": "ls_source_sql_system_Assigned",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=surasqlserverdev.database.windows.net;Initial Catalog=surasqldev"
+		}
+	}
+}
