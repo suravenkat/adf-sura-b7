@@ -1,0 +1,16 @@
+{
+	"name": "ds_source_sql_systemAssigned",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_source_sql_system_Assigned",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "iplteams"
+		}
+	}
+}
