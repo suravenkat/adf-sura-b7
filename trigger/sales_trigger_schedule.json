@@ -3,7 +3,7 @@
 	"properties": {
 		"description": "sales_trigger_schedule",
 		"annotations": [],
-		"runtimeState": "Started",
+		"runtimeState": "Stopped",
 		"pipelines": [
 			{
 				"pipelineReference": {
