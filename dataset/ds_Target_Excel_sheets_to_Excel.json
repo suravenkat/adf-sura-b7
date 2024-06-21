@@ -1,0 +1,32 @@
+{
+	"name": "ds_Target_Excel_sheets_to_Excel",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_source_adls",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"TargetExcelSheetName": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "NewPipes"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().TargetExcelSheetName",
+					"type": "Expression"
+				},
+				"folderPath": "target",
+				"fileSystem": "sourcecontainer"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
