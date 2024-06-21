@@ -12,7 +12,7 @@
 						"value": "@createArray('products','empinfo','employees')",
 						"type": "Expression"
 					},
-					"isSequential": true,
+					"isSequential": false,
 					"activities": [
 						{
 							"name": "Copy data1",
