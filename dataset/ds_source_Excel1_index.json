@@ -1,0 +1,34 @@
+{
+	"name": "ds_source_Excel1_index",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_source_adls",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"index": {
+				"type": "int"
+			}
+		},
+		"folder": {
+			"name": "NewPipes"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "inputExcelfile.xlsx",
+				"folderPath": "source",
+				"fileSystem": "sourcecontainer"
+			},
+			"sheetIndex": {
+				"value": "@dataset().index",
+				"type": "Expression"
+			},
+			"range": "",
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
