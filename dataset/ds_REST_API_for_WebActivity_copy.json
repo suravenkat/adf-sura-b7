@@ -1,0 +1,23 @@
+{
+	"name": "ds_REST_API_for_WebActivity_copy",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_RestAPI",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"QueryParameter": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@dataset().QueryParameter",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	}
+}
